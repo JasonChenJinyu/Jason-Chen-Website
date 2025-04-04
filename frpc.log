@@ -1,1 +1,574 @@
-0.61.2
+WARNING: ini format is deprecated and the support will be removed in the future, please use yaml/json/toml format instead!
+[1;34m2025-04-04 11:02:17.910 [I] [sub/root.go:142] start frpc service for config file [frpc.toml]
+[0m[1;34m2025-04-04 11:02:17.910 [I] [client/service.go:295] try to connect to server...
+[0m[1;33m2025-04-04 11:02:18.015 [W] [client/service.go:298] connect to server error: session shutdown
+[0m[1;34m2025-04-04 11:02:20.035 [I] [client/service.go:295] try to connect to server...
+[0m[1;34m2025-04-04 11:02:20.290 [I] [client/service.go:287] [ca1b0808d94947c1] login to server success, get run id [ca1b0808d94947c1]
+[0m[1;34m2025-04-04 11:02:20.290 [I] [proxy/proxy_manager.go:173] [ca1b0808d94947c1] proxy added: [web]
+[0m[1;36m2025-04-04 11:02:20.290 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;34m2025-04-04 11:02:20.366 [I] [client/control.go:168] [ca1b0808d94947c1] [web] start proxy success
+[0m[1;36m2025-04-04 11:02:20.366 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:02:22.094 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:02:22.094 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:64067] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:02:22.096 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:02:28.242 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:02:28.243 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:64145] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:02:28.243 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:02:39.563 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:02:39.564 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:64184] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:02:39.564 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:02:40.291 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:02:40.373 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:03:00.292 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:03:00.357 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:03:20.292 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:03:20.356 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:03:40.293 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:03:40.367 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:04:00.293 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:04:00.365 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:04:20.294 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:04:20.368 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:04:40.295 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:04:40.401 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:05:00.296 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:05:00.379 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:05:20.297 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:05:20.371 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:05:40.298 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:05:40.396 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:06:00.298 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:06:00.383 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:06:20.299 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:06:20.370 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:06:20.370 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:20.372 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65436] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:20.373 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:21.447 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:21.448 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65470] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:21.449 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:23.500 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:23.500 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65483] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:23.500 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:23.628 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:23.628 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65484] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:23.629 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:35.955 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:35.955 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65508] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:36.251 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:36.251 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65516] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:36.337 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:36.337 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:36.338 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65518] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:36.338 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65517] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:36.410 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:06:36.411 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:65519] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:06:40.300 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:06:40.385 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:06:42.284 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:42.350 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:42.352 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:42.415 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:06:46.186 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:07:00.300 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:07:00.389 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:07:20.301 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:07:20.419 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:07:40.302 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:07:40.363 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:08:00.303 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:08:00.386 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:08:20.303 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:08:20.417 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:08:25.346 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:08:25.347 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:49463] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:08:25.350 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:08:29.559 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:08:29.560 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:49468] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:08:29.562 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:08:30.483 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:08:30.483 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:08:30.483 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:49471] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:08:30.484 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:49472] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:08:36.492 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:08:36.709 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:08:40.304 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:08:40.378 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:08:40.541 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:08:40.542 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:49521] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:08:40.542 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:09:00.305 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:09:00.413 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:09:20.305 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:09:20.368 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:09:40.305 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:09:40.378 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:10:00.306 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:10:00.371 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:10:20.306 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:10:20.375 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:10:40.307 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:10:40.421 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:11:00.308 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:11:00.368 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:11:20.309 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:11:20.410 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:11:40.309 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:11:40.376 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:12:00.309 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:12:00.510 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:12:20.309 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:12:20.376 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:12:40.310 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:12:40.377 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:13:00.310 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:13:00.382 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:13:20.310 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:13:20.380 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:13:40.310 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:13:40.395 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:14:00.311 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:14:00.423 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:14:20.311 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:14:20.375 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:14:40.311 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:14:40.404 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:15:00.312 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:15:00.418 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:15:20.312 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:15:20.387 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:15:40.312 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:15:40.383 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:16:00.312 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:16:00.380 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:16:20.313 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:16:20.594 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:16:40.313 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:16:40.394 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:17:00.314 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:17:00.404 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:17:20.314 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:17:20.415 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:17:25.259 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:17:25.259 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:51172] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:17:30.771 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:17:35.207 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:17:35.208 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:51248] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:17:35.208 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:17:35.839 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:17:35.839 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:51250] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:17:35.871 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:17:40.314 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:17:40.418 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:18:00.314 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:18:00.382 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:18:20.315 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:18:20.418 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:18:40.316 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:18:40.385 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:19:00.317 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:19:00.380 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:19:20.317 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:19:20.397 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:19:40.318 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:19:40.540 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:20:00.318 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:20:00.385 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:20:20.319 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:20:20.392 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:20:40.320 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:20:40.389 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:21:00.320 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:21:00.391 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:21:20.320 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:21:20.403 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:21:40.321 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:21:40.464 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:22:00.321 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:22:00.415 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:22:20.322 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:22:20.417 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:22:40.322 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:22:40.389 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:23:00.323 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:23:00.390 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:23:20.323 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:23:20.394 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:23:40.323 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:23:40.388 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:24:00.324 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:24:00.423 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:24:20.324 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:24:20.397 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:24:40.324 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:24:40.446 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:25:00.325 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:25:00.399 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:25:20.326 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:25:20.422 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:25:40.326 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:25:40.397 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:26:00.327 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:26:00.393 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:26:20.328 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:26:20.585 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:26:40.329 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:26:40.423 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:27:00.329 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:27:00.434 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:27:20.329 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:27:20.404 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:27:40.329 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:27:40.431 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:28:00.330 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:28:00.453 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:28:20.330 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:28:20.441 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:28:40.331 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:28:40.456 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:29:00.331 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:29:00.422 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:29:20.331 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:29:20.430 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:29:40.331 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:29:40.410 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:30:00.332 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:30:00.436 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:30:15.104 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:15.105 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54522] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:15.326 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:15.327 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54529] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:15.445 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:15.446 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54531] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:15.458 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:15.458 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54532] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:15.460 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:15.461 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54533] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:20.332 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:30:20.407 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:30:21.435 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:30:21.456 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:30:21.467 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:30:21.467 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:30:21.947 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:30:38.261 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:30:38.262 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54611] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:30:40.333 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:30:40.429 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:30:53.458 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:31:00.334 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:31:00.409 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:31:20.334 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:31:20.406 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:31:40.335 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:31:40.398 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:31:47.135 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:31:47.136 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54890] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:31:53.382 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:31:53.383 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54921] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:31:53.410 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:31:53.410 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54922] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:31:59.306 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:31:59.386 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:32:00.335 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:32:00.448 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:32:02.627 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:32:02.849 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:32:02.850 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54937] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:32:05.455 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:32:05.456 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:54939] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:32:11.820 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:32:13.479 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:32:20.336 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:32:20.433 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:32:40.336 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:32:40.437 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:33:00.337 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:33:00.421 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:33:15.778 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 11:33:15.779 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:55150] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 11:33:20.337 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:33:20.436 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:33:25.830 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 11:33:40.338 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:33:40.436 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:34:00.339 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:34:00.403 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:34:20.340 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:34:20.475 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:34:40.342 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:34:40.427 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:35:00.342 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:35:00.459 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:35:20.343 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:35:20.692 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:35:40.344 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:35:40.431 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:36:00.344 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:36:00.427 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:36:20.345 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:36:20.412 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:36:40.345 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:36:40.445 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:37:00.346 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:37:00.410 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:37:20.347 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:37:20.529 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:37:40.347 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:37:40.449 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:38:00.347 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:38:00.444 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:38:20.347 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:38:20.442 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:38:40.349 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:38:40.443 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:39:00.349 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:39:00.437 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:39:20.352 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:39:20.425 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:39:40.353 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:39:40.471 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:40:00.354 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:40:00.475 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:40:20.354 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:40:20.449 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:40:40.355 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:40:40.435 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:41:00.356 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:41:00.462 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:41:20.357 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:41:20.450 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:41:40.359 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:41:40.454 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:42:00.359 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:42:00.452 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:42:20.359 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:42:20.432 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:42:40.360 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:42:40.420 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:43:00.361 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:43:00.436 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:43:20.361 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:43:20.432 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:43:40.361 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:43:40.479 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:44:00.362 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:44:00.429 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:44:20.362 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:44:20.457 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:44:40.363 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:44:40.470 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:45:00.363 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:45:00.505 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:45:20.363 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:45:20.433 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:45:40.364 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:45:40.458 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:46:00.367 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:46:00.432 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:46:20.367 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:46:20.488 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:46:40.368 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:46:40.432 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:47:00.368 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:47:00.464 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:47:20.368 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:47:20.431 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:47:40.369 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:47:40.431 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:48:00.369 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:48:00.451 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:48:20.369 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:48:20.435 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:48:40.370 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:48:40.462 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:49:00.370 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:49:00.434 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:49:20.370 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:49:20.433 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:49:40.371 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:49:40.465 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:50:00.371 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:50:00.436 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:50:20.371 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:50:20.443 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:50:40.372 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:50:40.694 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:51:00.372 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:51:00.451 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:51:20.372 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:51:20.446 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:51:40.372 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:51:40.469 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:52:00.372 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:52:00.468 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:52:20.373 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:52:20.453 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:52:40.374 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:52:40.437 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:53:00.374 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:53:00.441 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:53:20.375 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:53:20.463 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:53:40.375 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:53:40.437 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:54:00.376 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:54:00.486 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:54:20.377 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:54:20.439 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:54:40.377 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:54:40.482 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:55:00.379 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:55:00.444 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:55:20.380 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:55:20.473 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:55:40.381 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:55:40.473 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:56:00.382 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:56:00.464 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:56:20.382 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:56:20.453 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:56:40.382 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:56:40.488 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:57:00.383 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:57:00.455 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:57:20.384 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:57:20.456 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:57:40.384 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:57:40.452 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:58:00.384 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:58:00.448 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:58:20.385 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:58:20.503 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:58:40.387 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:58:40.547 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:59:00.388 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:59:00.452 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:59:20.389 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:59:20.458 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 11:59:40.390 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 11:59:40.467 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:00:00.391 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:00:00.485 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:00:20.391 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:00:20.471 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:00:40.393 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:00:40.476 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:01:00.394 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:01:00.475 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:01:20.395 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:01:20.470 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:01:40.396 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:01:40.464 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:02:00.397 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:02:00.463 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:02:20.398 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:02:20.471 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:02:40.399 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:02:40.467 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:03:00.399 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:03:00.484 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:03:20.402 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:03:20.468 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:03:40.403 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:03:40.476 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:04:00.403 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:04:00.492 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:04:20.404 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:04:20.466 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:04:40.404 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:04:40.483 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:05:00.405 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:05:00.483 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:05:20.407 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:05:20.471 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:05:40.407 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:05:40.470 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:06:00.408 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:06:00.493 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:06:20.409 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:06:20.510 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:06:40.410 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:06:40.665 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:07:00.411 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:07:00.503 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:07:20.411 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:07:20.480 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:07:40.412 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:07:40.482 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:08:00.412 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:08:00.481 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:08:20.412 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:08:20.495 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:08:40.413 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:08:40.526 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:09:00.414 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:09:00.490 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:09:20.415 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:09:20.487 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:09:40.416 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:09:40.500 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:10:00.417 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:10:00.480 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:10:20.417 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:10:20.556 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:10:40.418 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:10:40.557 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:11:00.418 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:11:00.517 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:11:20.418 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:11:20.513 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:11:40.419 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:11:40.542 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:12:00.420 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:12:00.483 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:12:20.421 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:12:20.491 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:12:36.884 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 12:12:36.885 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:59659] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 12:12:37.337 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 12:12:40.421 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:12:40.483 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:13:00.422 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:13:00.508 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:13:20.423 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:13:20.533 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:13:40.423 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:13:40.498 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:14:00.425 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:14:00.516 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:14:20.425 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:14:20.534 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:14:40.425 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:14:40.543 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:14:52.749 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 12:14:52.750 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:59895] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 12:14:52.752 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 12:14:53.333 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 12:14:53.333 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:59897] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 12:14:53.335 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 12:14:53.938 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 12:14:53.938 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:59898] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 12:14:53.940 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 12:14:54.493 [D] [proxy/proxy_wrapper.go:260] [ca1b0808d94947c1] [web] start a new work connection, localAddr: 198.18.0.1:64059 remoteAddr: 47.106.67.151:7001
+[0m[1;36m2025-04-04 12:14:54.494 [D] [proxy/proxy.go:210] [ca1b0808d94947c1] [web] join connections, localConn(l[127.0.0.1:59899] r[127.0.0.1:3000]) workConn(l[198.18.0.1:64059] r[47.106.67.151:7001])
+[0m[1;36m2025-04-04 12:14:54.494 [D] [proxy/proxy.go:222] [ca1b0808d94947c1] [web] join connections closed
+[0m[1;36m2025-04-04 12:15:00.427 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:15:00.522 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:15:20.428 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:15:20.508 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:15:40.429 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:15:40.591 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:16:00.431 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:16:00.516 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:16:20.433 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:16:20.560 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:16:40.434 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:16:40.597 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:17:00.436 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:17:00.534 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:17:20.436 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:17:20.505 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m[1;36m2025-04-04 12:17:40.437 [D] [client/control.go:240] [ca1b0808d94947c1] send heartbeat to server
+[0m[1;36m2025-04-04 12:17:40.503 [D] [client/control.go:193] [ca1b0808d94947c1] receive heartbeat from server
+[0m

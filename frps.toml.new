@@ -1,0 +1,23 @@
+# Fast Reverse Proxy Server Configuration
+# This file configures the server side of the FRP tunnel on Alibaba Cloud
+# It receives connections from clients and forwards traffic
+
+[common]
+bind_port = 7001
+token = "2ChenjinyU080511"
+dashboard_port = 7500
+dashboard_user = "admin"
+dashboard_pwd = "2ChenjinyU080511"
+vhost_http_port = 443  # Updated to use HTTPS port
+# Add path handling settings
+subdomain_host = "jinyuchen.cc"
+# Prevent redirection
+use_encryption = true
+use_compression = true
+
+# Add HTTP specific settings
+[web]
+type = "http"
+local_port = 443
+# Add path handling settings
+route_by_http_user = false 
