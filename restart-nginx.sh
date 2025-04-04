@@ -10,5 +10,5 @@ echo "🚀 Starting Nginx..."
 sudo /opt/homebrew/bin/nginx
 
 echo "✅ Nginx is now running on port 8080"
-echo "🌐 Your site should be accessible at http://localhost:8080"
+echo "🌐 Your site should be accessible at http://localhost:8081"
 echo "🌐 Make sure your cloud server (47.106.67.151) is forwarding port 80 to your Mac Mini's port 8080"

@@ -27,7 +27,7 @@ local_ip = "127.0.0.1"
 # Local port (Next.js)
 local_port = 3000
 # Remote port on server
-remote_port = 443
+remote_port = 8081
 # Prevent redirection
 use_encryption = true
 use_compression = true
