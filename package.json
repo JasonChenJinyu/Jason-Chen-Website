@@ -3,25 +3,52 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.8.0",
+    "@prisma/client": "^6.5.0",
+    "@tiptap/extension-color": "^2.11.7",
+    "@tiptap/extension-font-family": "^2.11.7",
+    "@tiptap/extension-image": "^2.11.7",
+    "@tiptap/extension-link": "^2.11.7",
+    "@tiptap/extension-placeholder": "^2.11.7",
+    "@tiptap/extension-text-align": "^2.11.7",
+    "@tiptap/extension-underline": "^2.11.7",
+    "@tiptap/extension-youtube": "^2.11.7",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
+    "bcryptjs": "^3.0.2",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.485.0",
+    "next": "15.2.4",
+    "next-auth": "^4.24.11",
+    "prisma": "^6.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "tcp-port-used": "^1.0.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
-  }
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
+  },
+  "description": "A modern, Apple-style personal blog built with Next.js, TypeScript, and Tailwind CSS.",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

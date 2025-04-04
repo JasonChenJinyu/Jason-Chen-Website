@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jason Chen Blog
+
+A personal blog built with Next.js, featuring a responsive video hero section, admin panel, and SQLite database.
+
+## Features
+
+- Full-screen video hero with scroll effect
+- Blog posts with comments
+- Admin panel to manage users and content 
+- Authentication with NextAuth.js
+- SQLite database with Prisma
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Initialize the database:
+   ```bash
+   npx prisma db push
+   node create-admin.js
+   ```
+4. Build the application:
+   ```bash
+   npm run build
+   ```
+5. Start the application:
+   ```bash
+   npm start
+   ```
 
+For an easier setup, you can use the provided scripts:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+./fix-build.sh    # Clean install and build
+./start-nextjs.sh # Start the application
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Video Hero Section
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The homepage features a full-screen video that shrinks as the user scrolls down. To replace the placeholder with your own video:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Add your own MP4 video file to the `public` folder and name it `placeholder.mp4`
 
-## Learn More
+Or use the provided video generator:
 
-To learn more about Next.js, take a look at the following resources:
+1. Open `http://localhost:3000/createPlaceholderVideo.html` in your browser
+2. Click "Generate Placeholder Video" to create a sample video
+3. Move the downloaded file to the `public` folder and rename it to `placeholder.mp4`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Admin Access
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Admin User: admin@jasonchen.com / Password: admin123
+- Super User: super@jasonchen.com / Password: super123
 
-## Deploy on Vercel
+## Need Help?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you need assistance with specific features or encounter issues, please refer to the documentation in the `docs` folder or contact Jason Chen directly.

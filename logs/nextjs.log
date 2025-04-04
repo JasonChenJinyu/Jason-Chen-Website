@@ -1,0 +1,42 @@
+[0;34mStarting Next.js application...[0m
+Checking for processes using port 3000...
+[1;33mCleaning existing Prisma client...[0m
+[1;33mChecking and updating database...[0m
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.5.0) to ./node_modules/@prisma/client in 60ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.5.0) to ./node_modules/@prisma/client in 46ms
+
+[1;33mEnsuring admin users exist...[0m
+User admin@jasonchen.com updated to admin role.
+User super@jasonchen.com updated to superuser role.
+[0;32mExisting build found.[0m
+[0;32mStarting Next.js server...[0m
+[0;32mAdmin User: admin@jasonchen.com / Password: admin123[0m
+[0;32mSuper User: super@jasonchen.com / Password: super123[0m
+
+> jasonchenblog@0.1.0 start
+> next start
+
+   ▲ Next.js 15.2.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.103:3000
+
+ ✓ Starting...
+ ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+ ✓ Ready in 276ms
+./start-nextjs.sh: line 55: 59639 Killed: 9               npm start

@@ -1,0 +1,14 @@
+# Fast Reverse Proxy Client Configuration
+# This file configures the client side of the FRP tunnel
+# It connects to the Alibaba Cloud server and forwards traffic
+
+[common]
+server_addr = "47.106.67.151"  # Alibaba Cloud server IP
+server_port = 7001  # FRP server port
+token = "2ChenjinyU080511"  # Authentication token (must match server)
+
+[web]
+type = "tcp"  # Changed back to tcp
+local_ip = "127.0.0.1"  # Local address to forward from
+local_port = 3000  # Local port (Next.js)
+remote_port = 8080  # Remote port on server
