@@ -37,13 +37,24 @@ export default function FilesPage() {
         try {
           const response = await fetch(`/api/files?path=${encodeURIComponent(currentPath)}`);
           if (!response.ok) {
-            throw new Error(`Error: ${response.status}`);
+            let errorMsg = `Error: ${response.status}`;
+            try {
+              // Try to get the detailed error message from the response
+              const errorData = await response.json();
+              if (errorData && errorData.message) {
+                errorMsg = `${errorMsg} - ${errorData.message}`;
+              }
+            } catch (parseError) {
+              console.error('Error parsing error response:', parseError);
+            }
+            throw new Error(errorMsg);
           }
           const data = await response.json();
           setFiles(data);
         } catch (err) {
           console.error('Error fetching files:', err);
-          setError('Failed to load files. Please try again later.');
+          const message = err instanceof Error ? err.message : String(err);
+          setError(`Failed to load files: ${message}`);
         } finally {
           setLoading(false);
         }

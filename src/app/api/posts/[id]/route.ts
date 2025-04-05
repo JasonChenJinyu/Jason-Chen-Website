@@ -4,9 +4,12 @@ import { authOptions } from '../../auth/authOptions';
 import { prisma } from '@/lib/prisma';
 
 // GET a specific post by ID
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = request.nextUrl.pathname.split('/').pop();
+    const { id } = await params;
     
     if (!id) {
       return NextResponse.json(
@@ -48,9 +51,12 @@ export async function GET(request: NextRequest) {
 }
 
 // PUT to update a post
-export async function PUT(request: NextRequest) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = request.nextUrl.pathname.split('/').pop();
+    const { id } = await params;
     
     if (!id) {
       return NextResponse.json(
@@ -136,9 +142,12 @@ export async function PUT(request: NextRequest) {
 }
 
 // DELETE a post
-export async function DELETE(request: NextRequest) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = request.nextUrl.pathname.split('/').pop();
+    const { id } = await params;
     
     if (!id) {
       return NextResponse.json(

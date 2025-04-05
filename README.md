@@ -41,13 +41,13 @@ For an easier setup, you can use the provided scripts:
 
 The homepage features a full-screen video that shrinks as the user scrolls down. To replace the placeholder with your own video:
 
-1. Add your own MP4 video file to the `public` folder and name it `placeholder.mp4`
+1. Add your own MP4 video file to the `public` folder and name it `placeholder-compressed.mp4` (make sure to compress it for optimal web delivery)
 
 Or use the provided video generator:
 
 1. Open `http://localhost:3000/createPlaceholderVideo.html` in your browser
 2. Click "Generate Placeholder Video" to create a sample video
-3. Move the downloaded file to the `public` folder and rename it to `placeholder.mp4`
+3. Move the downloaded file to the `public` folder, compress it for web delivery, and rename it to `placeholder-compressed.mp4`
 
 ## Admin Access
 

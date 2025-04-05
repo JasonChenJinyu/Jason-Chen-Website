@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { Pencil, Plus } from 'lucide-react';
 
 type User = {
   id: string;
@@ -12,12 +14,25 @@ type User = {
   createdAt: string;
 };
 
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  featured: boolean;
+  published: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export default function AdminPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [users, setUsers] = useState<User[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [projectsLoading, setProjectsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [projectsError, setProjectsError] = useState<string | null>(null);
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -34,6 +49,9 @@ export default function AdminPage() {
 
       // Fetch users
       fetchUsers();
+      
+      // Fetch projects
+      fetchProjects();
     }
   }, [status, router, session]);
 
@@ -53,6 +71,25 @@ export default function AdminPage() {
       setError('Failed to load users. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchProjects = async () => {
+    try {
+      setProjectsLoading(true);
+      const response = await fetch('/api/projects?published=all');
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch projects');
+      }
+
+      const data = await response.json();
+      setProjects(data);
+    } catch (err) {
+      console.error('Error fetching projects:', err);
+      setProjectsError('Failed to load projects. Please try again.');
+    } finally {
+      setProjectsLoading(false);
     }
   };
 
@@ -104,9 +141,9 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen px-4 py-16 pt-24">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+    <div className="min-h-screen px-4 py-16 pt-24 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8 text-white">Admin Dashboard</h1>
         
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -114,71 +151,171 @@ export default function AdminPage() {
           </div>
         )}
         
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="p-4 border-b bg-gray-50">
-            <h2 className="text-xl font-semibold">User Management</h2>
+        {/* Projects Management Section */}
+        <div className="bg-glass-darker rounded-lg shadow-md overflow-hidden mb-8">
+          <div className="p-4 border-b border-gray-200 bg-glass flex justify-between items-center">
+            <h2 className="text-xl font-semibold text-white">Project Management</h2>
+            <Link 
+              href="/admin/projects/new"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center"
+            >
+              <Plus className="w-4 h-4 mr-1" /> New Project
+            </Link>
           </div>
-          {loading ? (
+          
+          {projectsError && (
+            <div className="bg-red-900/70 border border-red-700 text-red-100 px-4 py-3 m-4 rounded">
+              {projectsError}
+            </div>
+          )}
+          
+          {projectsLoading ? (
             <div className="flex justify-center p-8">
-              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-black"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white"></div>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="min-w-full">
                 <thead>
-                  <tr className="bg-gray-100">
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Name
+                  <tr className="bg-glass-lighter">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Title
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Email
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Description
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Role
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Status
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Registered
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Last Updated
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                       Actions
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-gray-700">
+                  {projects.length === 0 ? (
+                    <tr>
+                      <td colSpan={5} className="px-6 py-4 text-center text-gray-400">
+                        No projects found
+                      </td>
+                    </tr>
+                  ) : (
+                    projects.map((project) => (
+                      <tr key={project.id} className="hover:bg-glass">
+                        <td className="px-6 py-4 whitespace-nowrap font-medium text-white">
+                          {project.title}
+                        </td>
+                        <td className="px-6 py-4 text-gray-300">
+                          <div className="truncate max-w-xs">{project.description}</div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="flex space-x-2">
+                            {project.published ? (
+                              <span className="px-2 py-1 rounded-full text-xs bg-green-900 text-green-100">
+                                Published
+                              </span>
+                            ) : (
+                              <span className="px-2 py-1 rounded-full text-xs bg-gray-700 text-gray-100">
+                                Draft
+                              </span>
+                            )}
+                            
+                            {project.featured && (
+                              <span className="px-2 py-1 rounded-full text-xs bg-purple-900 text-purple-100">
+                                Featured
+                              </span>
+                            )}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-300">
+                          {new Date(project.updatedAt).toLocaleDateString()}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <Link
+                            href={`/admin/projects/edit/${project.id}`}
+                            className="text-blue-400 hover:text-blue-300 flex items-center"
+                          >
+                            <Pencil className="w-4 h-4 mr-1" /> Edit
+                          </Link>
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+        
+        {/* User Management Section */}
+        <div className="bg-glass-darker rounded-lg shadow-md overflow-hidden">
+          <div className="p-4 border-b border-gray-200 bg-glass">
+            <h2 className="text-xl font-semibold text-white">User Management</h2>
+          </div>
+          {loading ? (
+            <div className="flex justify-center p-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white"></div>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="min-w-full">
+                <thead>
+                  <tr className="bg-glass-lighter">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Email
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Role
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Registered
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-700">
                   {users.length === 0 ? (
                     <tr>
-                      <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
+                      <td colSpan={5} className="px-6 py-4 text-center text-gray-400">
                         No users found
                       </td>
                     </tr>
                   ) : (
                     users.map((user) => (
-                      <tr key={user.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap">
+                      <tr key={user.id} className="hover:bg-glass">
+                        <td className="px-6 py-4 whitespace-nowrap text-white">
                           {user.name || 'Anonymous'}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-300">
                           {user.email}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`px-2 py-1 rounded-full text-xs ${
                             user.role === 'ADMIN' 
-                              ? 'bg-purple-100 text-purple-800' 
+                              ? 'bg-purple-900 text-purple-100' 
                               : user.role === 'SUPERUSER' 
-                                ? 'bg-red-100 text-red-800' 
-                                : 'bg-green-100 text-green-800'
+                                ? 'bg-red-900 text-red-100' 
+                                : 'bg-green-900 text-green-100'
                           }`}>
                             {user.role}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-300">
                           {new Date(user.createdAt).toLocaleDateString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <select
                             value={user.role}
                             onChange={(e) => changeRole(user.id, e.target.value)}
-                            className="border rounded px-2 py-1 text-sm"
+                            className="bg-glass text-white border border-glass-lighter rounded px-2 py-1 text-sm"
                             disabled={!session || session.user?.role !== 'SUPERUSER' && user.role === 'SUPERUSER'}
                           >
                             <option value="USER">USER</option>

@@ -18,6 +18,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   posts         Post[]
   comments      Comment[]
+  projects      Project[]
 }
 
 model Post {
@@ -33,6 +34,28 @@ model Post {
   author        User      @relation(fields: [authorId], references: [id])
   authorId      String
   comments      Comment[]
+}
+
+model Project {
+  id                String   @id @default(cuid())
+  title             String
+  description       String
+  content           String   @default("")
+  image             String?
+  gradientStart     String   @default("from-blue-500")
+  gradientEnd       String   @default("to-purple-600")
+  emoji             String   @default("🚀")
+  technologies      String   // JSON string of technologies
+  projectUrl        String?
+  githubUrl         String?
+  featured          Boolean  @default(false)
+  featuredOrder     Int      @default(0)
+  published         Boolean  @default(false)
+  publishedAt       DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  author            User     @relation(fields: [authorId], references: [id])
+  authorId          String
 }
 
 model Comment {

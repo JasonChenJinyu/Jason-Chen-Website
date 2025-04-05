@@ -7,7 +7,7 @@ import { exec } from 'child_process';
 
 // Define the base directory where files are shared on the Mac Mini
 // This should be a directory that's set up for file sharing
-const BASE_DIRECTORY = process.env.SHARED_DIRECTORY || '/Users/jasonchen/file_share';
+const BASE_DIRECTORY = process.env.SHARED_DIRECTORY || '/Users/jasonchen';
 
 // Validate that a path is within the allowed base directory
 function validatePath(requestedPath: string): string {
@@ -45,46 +45,89 @@ export async function GET(request: Request) {
     try {
       const fullPath = validatePath(requestedPath);
       
-      // Check if the directory exists
-      const stats = await fs.stat(fullPath);
-      if (!stats.isDirectory()) {
+      // Enhanced debugging - log the paths
+      console.log('BASE_DIRECTORY:', BASE_DIRECTORY);
+      console.log('Requested path:', requestedPath);
+      console.log('Full path to access:', fullPath);
+      
+      // First check if the directory exists
+      try {
+        const stats = await fs.stat(fullPath);
+        
+        if (!stats.isDirectory()) {
+          return NextResponse.json(
+            { message: 'Not a directory' },
+            { status: 400 }
+          );
+        }
+      } catch (statError) {
+        console.error('Error checking path stats:', statError);
         return NextResponse.json(
-          { message: 'Not a directory' },
-          { status: 400 }
+          { message: `Directory not accessible: ${statError instanceof Error ? statError.message : String(statError)}` },
+          { status: 404 }
         );
       }
       
       // Read the directory contents
-      const files = await fs.readdir(fullPath);
+      let files;
+      try {
+        files = await fs.readdir(fullPath);
+      } catch (readError) {
+        console.error('Error reading directory:', readError);
+        return NextResponse.json(
+          { message: `Cannot read directory: ${readError instanceof Error ? readError.message : String(readError)}` },
+          { status: 403 }
+        );
+      }
       
       // Get file details
-      const fileDetails = await Promise.all(
-        files.map(async (file) => {
-          const filePath = path.join(fullPath, file);
-          const stats = await fs.stat(filePath);
-          
-          return {
-            name: file,
-            path: path.join('/', requestedPath, file).replace(/\\/g, '/'),
-            isDirectory: stats.isDirectory(),
-            size: stats.size,
-            modifiedTime: stats.mtime.toISOString()
-          };
-        })
-      );
-      
-      return NextResponse.json(fileDetails);
+      try {
+        const fileDetails = await Promise.all(
+          files.map(async (file) => {
+            try {
+              const filePath = path.join(fullPath, file);
+              const stats = await fs.stat(filePath);
+              
+              return {
+                name: file,
+                path: path.join('/', requestedPath, file).replace(/\\/g, '/'),
+                isDirectory: stats.isDirectory(),
+                size: stats.size,
+                modifiedTime: stats.mtime.toISOString()
+              };
+            } catch (fileError) {
+              console.error(`Error getting details for file ${file}:`, fileError);
+              return {
+                name: file,
+                path: path.join('/', requestedPath, file).replace(/\\/g, '/'),
+                isDirectory: false,
+                size: 0,
+                modifiedTime: new Date().toISOString(),
+                error: 'Could not read file information'
+              };
+            }
+          })
+        );
+        
+        return NextResponse.json(fileDetails);
+      } catch (detailsError) {
+        console.error('Error getting file details:', detailsError);
+        return NextResponse.json(
+          { message: `Error processing file details: ${detailsError instanceof Error ? detailsError.message : String(detailsError)}` },
+          { status: 500 }
+        );
+      }
     } catch (error) {
       console.error('Error accessing path:', error);
       return NextResponse.json(
-        { message: 'Invalid path or directory not found' },
+        { message: `Invalid path or directory not found: ${error instanceof Error ? error.message : String(error)}` },
         { status: 404 }
       );
     }
   } catch (error) {
     console.error('Error listing files:', error);
     return NextResponse.json(
-      { message: 'Internal Server Error' },
+      { message: `Internal Server Error: ${error instanceof Error ? error.message : String(error)}` },
       { status: 500 }
     );
   }

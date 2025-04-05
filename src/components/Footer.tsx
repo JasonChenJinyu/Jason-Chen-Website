@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="/blog" className="text-gray-300 hover:text-white text-sm transition-colors">
               Blog
             </Link>
-            <Link href="/mac-files" className="text-gray-300 hover:text-white text-sm transition-colors">
+            <Link href="/files" className="text-gray-300 hover:text-white text-sm transition-colors">
               Mac Files
             </Link>
             <Link href="/login" className="text-gray-300 hover:text-white text-sm transition-colors">

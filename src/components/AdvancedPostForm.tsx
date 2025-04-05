@@ -9,7 +9,7 @@ import Image from 'next/image';
 // Import AdvancedEditor dynamically to avoid SSR issues
 const AdvancedEditor = dynamic(() => import('./AdvancedEditor'), {
   ssr: false,
-  loading: () => <div className="h-[500px] flex items-center justify-center bg-gray-50 border rounded-lg">Loading editor...</div>
+  loading: () => <div className="h-[500px] flex items-center justify-center bg-glass-darker border border-glass-lighter rounded-lg">Loading editor...</div>
 });
 
 interface PostFormProps {
@@ -131,7 +131,7 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
   return (
     <div className="max-w-5xl mx-auto py-6">
       {error && (
-        <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg">
+        <div className="mb-4 p-3 bg-red-900/70 border border-red-700 text-red-100 rounded-lg">
           {error}
         </div>
       )}
@@ -139,7 +139,7 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Title input */}
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="title" className="block text-sm font-medium text-white mb-1">
             Post Title
           </label>
           <input
@@ -148,19 +148,19 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter post title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+            className="w-full px-4 py-2 bg-glass text-white border border-glass-lighter rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
 
         {/* Featured image section */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-white mb-1">
             Featured Image
           </label>
           <div className="mt-1 flex items-center gap-4">
             {featuredImage ? (
-              <div className="relative h-40 w-64 overflow-hidden rounded-lg border">
+              <div className="relative h-40 w-64 overflow-hidden rounded-lg border border-glass-lighter">
                 <Image 
                   src={featuredImage} 
                   alt="Featured" 
@@ -176,20 +176,20 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
                 </button>
               </div>
             ) : (
-              <div className="h-40 w-64 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg">
+              <div className="h-40 w-64 flex items-center justify-center bg-glass-darker border-2 border-dashed border-glass-lighter rounded-lg">
                 {imageUploading ? (
-                  <div className="animate-pulse">Uploading...</div>
+                  <div className="animate-pulse text-white">Uploading...</div>
                 ) : (
                   <div className="text-center">
                     <ImageIcon className="mx-auto h-12 w-12 text-gray-400" />
-                    <p className="mt-1 text-sm text-gray-500">No image selected</p>
+                    <p className="mt-1 text-sm text-gray-400">No image selected</p>
                   </div>
                 )}
               </div>
             )}
             <div>
               <label htmlFor="featured-image" className="cursor-pointer">
-                <span className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg inline-block">
+                <span className="px-4 py-2 bg-glass hover:bg-glass-lighter text-white rounded-lg inline-block">
                   {featuredImage ? 'Change Image' : 'Upload Image'}
                 </span>
                 <input
@@ -207,19 +207,21 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
 
         {/* Content editor */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-white mb-1">
             Post Content
           </label>
-          <AdvancedEditor
-            initialContent={content}
-            onChange={setContent}
-            placeholder="Write your post content here..."
-          />
+          <div className="bg-glass border border-glass-lighter rounded-lg overflow-hidden">
+            <AdvancedEditor
+              initialContent={content}
+              onChange={setContent}
+              placeholder="Write your post content here..."
+            />
+          </div>
         </div>
 
         {/* Post settings */}
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h3 className="text-lg font-medium mb-4">Post Settings</h3>
+        <div className="bg-glass-darker p-4 rounded-lg border border-glass-lighter">
+          <h3 className="text-lg font-medium mb-4 text-white">Post Settings</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Publish status */}
@@ -229,9 +231,9 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
                 type="checkbox"
                 checked={published}
                 onChange={(e) => setPublished(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-black focus:ring-2 focus:ring-black"
+                className="h-4 w-4 rounded border-glass-lighter bg-glass text-blue-600 focus:ring-2 focus:ring-blue-500"
               />
-              <label htmlFor="published" className="flex items-center gap-1">
+              <label htmlFor="published" className="flex items-center gap-1 text-white">
                 {published ? <Eye size={16} /> : <EyeOff size={16} />}
                 {published ? 'Published' : 'Draft'}
               </label>
@@ -244,81 +246,73 @@ const AdvancedPostForm = ({ initialData, isEditing = false }: PostFormProps) => 
                 type="checkbox"
                 checked={showOnHomepage}
                 onChange={(e) => setShowOnHomepage(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-black focus:ring-2 focus:ring-black"
+                className="h-4 w-4 rounded border-glass-lighter bg-glass text-blue-600 focus:ring-2 focus:ring-blue-500"
               />
-              <label htmlFor="homepage" className="flex items-center gap-1">
+              <label htmlFor="homepage" className="flex items-center gap-1 text-white">
                 <Globe size={16} />
-                Show on homepage
+                Show on Homepage
               </label>
             </div>
 
             {/* Scheduled publish date */}
             <div className="md:col-span-2">
-              <label htmlFor="schedule" className="flex items-center gap-1 mb-1 text-sm">
+              <label htmlFor="schedule" className="flex items-center gap-1 text-white mb-2 text-sm">
                 <Calendar size={16} />
-                Schedule publication
+                Schedule Publication
               </label>
               <input
-                id="schedule"
                 type="date"
+                id="schedule"
                 value={scheduledDate}
                 onChange={(e) => setScheduledDate(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                min={new Date().toISOString().split('T')[0]}
+                className="w-full md:w-auto px-4 py-2 bg-glass text-white border border-glass-lighter rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <p className="mt-1 text-xs text-gray-500">
-                {scheduledDate 
-                  ? `Post will be published on ${new Date(scheduledDate).toLocaleDateString()}`
-                  : 'Post will be published immediately if set to Published'}
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Preview button and Save button */}
-        <div className="flex justify-between">
+        {/* Action buttons */}
+        <div className="flex justify-end gap-4">
           <button
             type="button"
             onClick={togglePreview}
-            className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg flex items-center gap-1"
+            className="px-4 py-2 bg-glass hover:bg-glass-lighter text-white rounded-lg"
           >
-            <Eye size={18} />
-            {previewOpen ? 'Close Preview' : 'Preview Post'}
+            {previewOpen ? 'Close Preview' : 'Preview'}
           </button>
           
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 flex items-center gap-2"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             <Save size={18} />
-            {isSubmitting ? 'Saving...' : 'Save Post'}
+            {isSubmitting ? 'Saving...' : isEditing ? 'Update Post' : 'Publish Post'}
           </button>
         </div>
-
-        {/* Post preview */}
-        {previewOpen && (
-          <div className="mt-6 border rounded-lg p-6 bg-white">
-            <h2 className="text-2xl font-bold mb-4">Preview</h2>
-            <div className="divider mb-4 border-t"></div>
-            
-            <article className="prose max-w-full">
-              <h1>{title || 'Untitled Post'}</h1>
-              {featuredImage && (
-                <div className="relative w-full h-96 mb-6">
-                  <Image
-                    src={featuredImage}
-                    alt={title || 'Featured image'}
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-              )}
-              <div dangerouslySetInnerHTML={{ __html: content }} />
-            </article>
-          </div>
-        )}
       </form>
+
+      {/* Preview section */}
+      {previewOpen && (
+        <div className="mt-12 border-t border-glass-lighter pt-8">
+          <h2 className="text-2xl font-bold mb-6 text-white">Preview</h2>
+          <div className="bg-glass p-8 rounded-lg prose prose-invert max-w-none">
+            <h1>{title || 'Untitled Post'}</h1>
+            {featuredImage && (
+              <div className="my-6">
+                <Image 
+                  src={featuredImage} 
+                  alt="Featured" 
+                  width={800}
+                  height={400}
+                  className="rounded-lg object-cover w-full"
+                />
+              </div>
+            )}
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

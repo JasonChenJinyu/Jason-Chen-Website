@@ -11,13 +11,13 @@ export default function ProfileImage() {
   };
 
   return (
-    <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-lg">
+    <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-white shadow-lg">
       <Image 
         src={imgSrc} 
         alt="Jason Chen"
-        width={256}
-        height={256}
-        className="object-cover"
+        fill
+        sizes="(max-width: 768px) 100vw, 256px"
+        className="object-cover w-full h-full"
         onError={handleError}
         style={{ 
           objectPosition: 'center 30%',
