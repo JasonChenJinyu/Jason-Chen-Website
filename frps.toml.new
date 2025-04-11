@@ -8,16 +8,11 @@ token = "2ChenjinyU080511"
 dashboard_port = 7500
 dashboard_user = "admin"
 dashboard_pwd = "2ChenjinyU080511"
-vhost_http_port = 8081  # Updated to match client configuration
-# Add path handling settings
-subdomain_host = "jinyuchen.cc"
 # Prevent redirection
 use_encryption = true
 use_compression = true
 
-# Add HTTP specific settings
+# Add TCP specific settings
 [web]
-type = "http"
-local_port = 8081
-# Add path handling settings
-route_by_http_user = false 
+type = "tcp"
+local_port = 8081 

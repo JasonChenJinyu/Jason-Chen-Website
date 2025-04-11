@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jinyu.asia/sitemap.xml 

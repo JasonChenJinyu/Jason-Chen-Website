@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,18 +12,29 @@ export default function Footer() {
             <p className="text-gray-300 text-sm">
               &copy; {currentYear} Jason Chen. All rights reserved.
             </p>
+            <p className="text-gray-300 text-sm">
+              陈劲羽  版权所有  保留一切权利
+            </p>
+            <p className="text-gray-300 text-sm mt-2">
+              <Link 
+                href="https://beian.miit.gov.cn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                京ICP备2025119159号-1
+              </Link>
+            </p>
           </div>
           
-          <div className="flex space-x-6">
-            <Link href="/blog" className="text-gray-300 hover:text-white text-sm transition-colors">
-              Blog
-            </Link>
-            <Link href="/files" className="text-gray-300 hover:text-white text-sm transition-colors">
-              Mac Files
-            </Link>
-            <Link href="/login" className="text-gray-300 hover:text-white text-sm transition-colors">
-              Login
-            </Link>
+          <div className="flex items-center">
+            <Image
+              src="/CJY2.png"
+              alt="CJY Logo"
+              width={150}
+              height={100}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>

@@ -33,4 +33,4 @@ use_encryption = true
 use_compression = true
 # Add path handling settings
 route_by_http_user = false
-custom_domains = "jinyuchen.cc"
+custom_domains = ["jinyu.asia"]
